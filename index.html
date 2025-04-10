@@ -7,6 +7,10 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
@@ -27,6 +31,7 @@
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      animation: flicker 3s infinite;
     }
 
     .hero p {
@@ -37,14 +42,28 @@
     .shapes {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
 
-    .shape-circle,
-    .shape-square {
+    .shape {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 40px;
       height: 40px;
+      animation: pulse 3s infinite ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .shape:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px #ff004f, 0 0 20px #ff004f;
+    }
+
+    .shape-circle,
+    .shape-square {
       border: 2px solid #ff004f;
     }
 
@@ -56,13 +75,45 @@
       border-radius: 3px;
     }
 
+    .shape-triangle-wrapper {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .shape-triangle {
       width: 0;
       height: 0;
-      border-left: 22px solid transparent;
-      border-right: 22px solid transparent;
-      border-bottom: 40px solid #ff004f;
-      margin-top: 5px;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 32px solid #ff004f;
+      transition: transform 0.4s ease;
+    }
+
+    .shape-triangle-wrapper:hover .shape-triangle {
+      transform: rotate(10deg);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 22%, 24%, 55% {
+        opacity: 0.3;
+      }
     }
 
     .form-section {
@@ -97,6 +148,7 @@
     button:hover {
       background: #ff004f;
       color: black;
+      box-shadow: 0 0 10px #ff004f;
     }
 
     .player-number {
@@ -128,9 +180,11 @@
     <h1>You’ve Been Invited</h1>
     <p>Enter your name to receive your player number...</p>
     <div class="shapes">
-      <div class="shape-circle"></div>
-      <div class="shape-triangle"></div>
-      <div class="shape-square"></div>
+      <div class="shape shape-circle"></div>
+      <div class="shape shape-triangle-wrapper">
+        <div class="shape-triangle"></div>
+      </div>
+      <div class="shape shape-square"></div>
     </div>
   </section>
 
