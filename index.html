@@ -228,6 +228,14 @@
       }
     }
   </script>
-
+<script>
+  fetch('./players.json')
+    .then(res => {
+      if (!res.ok) throw new Error('HTTP error ' + res.status);
+      return res.json();
+    })
+    .then(data => console.log('Player data loaded!', data))
+    .catch(err => console.error('Fetch error:', err));
+</script>
 </body>
 </html>
