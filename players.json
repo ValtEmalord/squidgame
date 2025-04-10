@@ -1,4 +1,6 @@
 [
+  {"name": "Ali Abbas", "playerNumber": 001 },
+  {"name": "Ali", "playerNumber": 001 },
   { "name": "Vaasu", "playerNumber": 456 },
   { "name": "Sathvik", "playerNumber": 218 },
   { "name": "Pavan", "playerNumber": 382 },
@@ -9,7 +11,6 @@
   { "name": "Rekshitha", "playerNumber": 879 },
   { "name": "Honey", "playerNumber": 454 },
   { "name": "Honeyruthi", "playerNumber": 454 },
-  { "name": "Joshitha", "playerNumber": 367 },
   { "name": "Nainika", "playerNumber": 100 }
 ]
 
