@@ -10,12 +10,13 @@
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
-      background-color: #000;
+      background: linear-gradient(to bottom right, #000000, #ff0066);
       color: #ff004f;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+      min-height: 100vh;
     }
 
     .hero {
@@ -30,7 +31,43 @@
 
     .hero p {
       font-size: 1.2rem;
-      color: #ff6699;
+      color: #ff80ab;
+    }
+
+    .shapes {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .shape {
+      width: 60px;
+      height: 60px;
+      border: 3px solid #ff004f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid #ff004f;
+      background: transparent;
+      border-radius: 0;
+      border: none;
+    }
+
+    .square {
+      border-radius: 0;
     }
 
     .form-section {
@@ -70,7 +107,7 @@
     .player-number {
       margin-top: 1rem;
       font-size: 1.5rem;
-      color: #ff6699;
+      color: #ff80ab;
     }
 
     .event-details {
@@ -86,7 +123,7 @@
 
     .event-details p {
       font-size: 1rem;
-      color: #ccc;
+      color: #ddd;
     }
   </style>
 </head>
@@ -95,6 +132,11 @@
   <section class="hero">
     <h1>You’ve Been Invited</h1>
     <p>Enter your name to receive your player number...</p>
+    <div class="shapes">
+      <div class="shape circle"></div>
+      <div class="triangle"></div>
+      <div class="shape square"></div>
+    </div>
   </section>
 
   <section class="form-section">
