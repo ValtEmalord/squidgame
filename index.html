@@ -21,7 +21,7 @@
 
     .hero {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .hero h1 {
@@ -37,37 +37,32 @@
     .shapes {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
-    .shape {
-      width: 60px;
-      height: 60px;
-      border: 3px solid #ff004f;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .shape-circle,
+    .shape-square {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #ff004f;
     }
 
-    .circle {
+    .shape-circle {
       border-radius: 50%;
     }
 
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 30px solid transparent;
-      border-right: 30px solid transparent;
-      border-bottom: 60px solid #ff004f;
-      background: transparent;
-      border-radius: 0;
-      border: none;
+    .shape-square {
+      border-radius: 3px;
     }
 
-    .square {
-      border-radius: 0;
+    .shape-triangle {
+      width: 0;
+      height: 0;
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      border-bottom: 40px solid #ff004f;
+      margin-top: 5px;
     }
 
     .form-section {
@@ -133,9 +128,9 @@
     <h1>You’ve Been Invited</h1>
     <p>Enter your name to receive your player number...</p>
     <div class="shapes">
-      <div class="shape circle"></div>
-      <div class="triangle"></div>
-      <div class="shape square"></div>
+      <div class="shape-circle"></div>
+      <div class="shape-triangle"></div>
+      <div class="shape-square"></div>
     </div>
   </section>
 
