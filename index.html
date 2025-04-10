@@ -2,212 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Squid Game Invite</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Squid Game Birthday Invite</title>
 
-    * {
-      box-sizing: border-box;
-    }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(to bottom right, #000000, #ff0066);
-      color: #ff004f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-      min-height: 100vh;
+      background: linear-gradient(135deg, #000000, #2a001e);
+      color: #fff;
+      text-align: center;
     }
 
     .hero {
-      text-align: center;
-      margin-bottom: 2.5rem;
+      padding: 60px 20px 30px;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      animation: flicker 3s infinite;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #ff80ab;
-    }
-
-    .shapes {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .shape {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      animation: pulse 3s infinite ease-in-out;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .shape:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 10px #ff004f, 0 0 20px #ff004f;
-    }
-
-    .shape-circle,
-    .shape-square {
-      border: 2px solid #ff004f;
-    }
-
-    .shape-circle {
-      border-radius: 50%;
-    }
-
-    .shape-square {
-      border-radius: 3px;
-    }
-
-    .shape-triangle-wrapper {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .shape-triangle {
-      width: 0;
-      height: 0;
-      border-left: 18px solid transparent;
-      border-right: 18px solid transparent;
-      border-bottom: 32px solid #ff004f;
-      transition: transform 0.4s ease;
-    }
-
-    .shape-triangle-wrapper:hover .shape-triangle {
-      transform: rotate(10deg);
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.8;
-        transform: scale(1.05);
-      }
+    .title {
+      font-size: 2.5em;
+      color: #ff004c;
+      animation: flicker 2s infinite;
     }
 
     @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 22%, 24%, 55% {
-        opacity: 0.3;
-      }
+      0%, 100% { opacity: 1; }
+      45% { opacity: 0.4; }
+      50% { opacity: 1; }
+      55% { opacity: 0.4; }
+      60% { opacity: 1; }
+    }
+
+    .shapes {
+      margin: 30px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 40px;
+    }
+
+    .shape {
+      color: #ff004c;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .shape:hover {
+      transform: rotate(360deg) scale(1.2);
+      opacity: 0.9;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .shape {
+      animation: pulse 2s infinite;
     }
 
     .form-section {
-      margin-bottom: 3rem;
-      text-align: center;
+      margin-top: 40px;
     }
 
     input[type="text"] {
-      padding: 0.8rem;
-      border: 2px solid #ff004f;
-      background: black;
-      color: white;
-      font-size: 1rem;
-      outline: none;
-      margin-right: 0.5rem;
-      border-radius: 5px;
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 4px;
+      width: 200px;
       font-family: 'Orbitron', sans-serif;
     }
 
     button {
-      padding: 0.8rem 1.5rem;
-      background: transparent;
-      border: 2px solid #ff004f;
-      color: #ff004f;
-      font-size: 1rem;
+      margin-left: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background: #ff004c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
-      border-radius: 5px;
-      transition: all 0.3s ease;
       font-family: 'Orbitron', sans-serif;
     }
 
-    button:hover {
-      background: #ff004f;
-      color: black;
-      box-shadow: 0 0 10px #ff004f;
+    #playerDisplay {
+      margin-top: 20px;
+      font-size: 1.4em;
+      color: #ff004c;
     }
 
-    .player-number {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-      color: #ff80ab;
-    }
-
-    .event-details {
-      margin-top: 3rem;
+    .player-card {
+      background: rgba(255, 0, 76, 0.1);
+      border: 1px solid #ff004c;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
       text-align: center;
-      max-width: 600px;
+      transition: all 0.5s ease;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #ff004c44;
     }
 
-    .event-details h2 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
+    .player-card.hidden {
+      opacity: 0;
+      transform: scale(0.9);
     }
 
-    .event-details p {
-      font-size: 1rem;
-      color: #ddd;
+    .player-card.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .shape-icon {
+      font-size: 30px;
+      margin-top: 10px;
+      color: #ff004c;
     }
   </style>
 </head>
+
 <body>
-
-  <section class="hero">
-    <h1>You’ve Been Invited</h1>
-    <p>Enter your name to receive your player number...</p>
+  <div class="hero">
+    <div class="title">You're Invited to the Game</div>
     <div class="shapes">
-      <div class="shape shape-circle"></div>
-      <div class="shape shape-triangle-wrapper">
-        <div class="shape-triangle"></div>
-      </div>
-      <div class="shape shape-square"></div>
+      <div class="shape">●</div>
+      <div class="shape">▲</div>
+      <div class="shape">■</div>
     </div>
-  </section>
 
-  <section class="form-section">
-    <input type="text" id="nameInput" placeholder="Enter your name" />
-    <button onclick="getPlayerNumber()">Get Player Number</button>
-    <div class="player-number" id="playerDisplay"></div>
-  </section>
-
-  <section class="event-details">
-    <h2>Event Details</h2>
-    <p>Date: April 19, 2025</p>
-    <p>Time: 6:00 PM</p>
-    <p>Location: #203,The Frontman's Residence</p>
-  </section>
+    <div class="form-section">
+      <input type="text" id="nameInput" placeholder="Enter your name"/>
+      <button onclick="getPlayerNumber()">Get Player Number</button>
+      <div id="playerDisplay" class="player-number"></div>
+      <div id="playerCard" class="player-card hidden"></div>
+    </div>
+  </div>
 
   <script>
     async function getPlayerNumber() {
       const name = document.getElementById('nameInput').value.trim().toLowerCase();
       const display = document.getElementById('playerDisplay');
+      const card = document.getElementById('playerCard');
 
       if (!name) {
         display.textContent = "Please enter your name.";
+        card.classList.remove('show');
+        card.classList.add('hidden');
         return;
       }
 
@@ -219,23 +166,29 @@
 
         if (player) {
           display.textContent = `Player #${player.playerNumber}`;
+
+          const shapes = ['●', '▲', '■'];
+          const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+
+          card.innerHTML = `
+            <div><strong>Name:</strong> ${player.name}</div>
+            <div><strong>Player #${player.playerNumber}</strong></div>
+            <div class="shape-icon">${randomShape}</div>
+          `;
+          card.classList.remove('hidden');
+          setTimeout(() => card.classList.add('show'), 50);
         } else {
           display.textContent = "Name not found. Contact the organizer.";
+          card.classList.remove('show');
+          card.classList.add('hidden');
         }
       } catch (error) {
         console.error('Error fetching player data:', error);
         display.textContent = "Error loading player data.";
+        card.classList.remove('show');
+        card.classList.add('hidden');
       }
     }
   </script>
-<script>
-  fetch('./players.json')
-    .then(res => {
-      if (!res.ok) throw new Error('HTTP error ' + res.status);
-      return res.json();
-    })
-    .then(data => console.log('Player data loaded!', data))
-    .catch(err => console.error('Fetch error:', err));
-</script>
 </body>
 </html>
