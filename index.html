@@ -212,7 +212,7 @@
       }
 
       try {
-        const response = await fetch('./players.json');
+        const response = await fetch('./players.json?v=' + Date.now());
         const data = await response.json();
 
         const player = data.find(p => p.name.toLowerCase() === name);
